@@ -170,6 +170,26 @@ nzbmatrix.talk({
 ```
 
 
+## limit
+
+This **object** is only filled after at least one API call is made and contains the API-limits for your account.
+
+```js
+nzbmatrix.download( 123, function() {
+	console.log( nzbmatrix.limit )
+})
+```
+
+```js
+{ api_rate_limit:           100,
+  api_rate_limit_used:      17,
+  api_rate_limit_left:      83,
+  api_download_limit:       150,
+  api_download_limit_used:  1,
+  api_download_limit_left:  149 }
+```
+
+
 # Unlicense
 
 This is free and unencumbered software released into the public domain.
