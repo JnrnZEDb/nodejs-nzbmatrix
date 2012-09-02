@@ -73,6 +73,9 @@ nzbmatrix.account( function( account ) {
 
 Add or remove a bookmark from your account.
 
+* **action** - `add` or `remove`
+* **nzbID** - the ID of the NZB post
+
 ```js
 nzbmatrix.bookmarks( 'add', 123, console.log )
 ```
