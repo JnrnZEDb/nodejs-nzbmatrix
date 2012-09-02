@@ -81,6 +81,33 @@ nzbmatrix.account( function( account ) {
 
 
 # License
+## talk
+### ( props )
+
+Directly communicate with the API.
+
+**props** is an object with the following properties:
+
+```
+path       : required - Method path, ie. search.php
+fields     : optional - Method parameters, ie. {id: 123}
+onSuccess  : optional - Callback function for results, only called on successful response
+```
+
+```js
+nzbmatrix.talk({
+	path:		'bookmarks.php',
+	fields: {
+		id:		123,
+		action:	'add'
+	},
+	onSuccess:	function( res ) {
+		console.log( res.RESULT || res.error )
+	}
+)
+```
+
+
 
 This is free and unencumbered software released into the public domain.
 
