@@ -1,0 +1,29 @@
+{
+  "author": {
+    "name":               "Franklin van de Meent",
+    "email":              "fr@nkl.in",
+    "url":                "http://frankl.in)"
+  },
+  "name":                 "nzbmatrix",
+  "description":          "Access the NZBMatrix API methods",
+  "version":              "1.0.0",
+  "repository": {
+    "type":               "git",
+    "url":                "git://github.com/fvdm/nodejs-nzbmatrix.git"
+  },
+  "bugs": {
+    "url":                "https://github.com/fvdm/nodejs-nzbmatrix/issues"
+  },
+  "main":                 "nzbmatrix.js",
+  "dependencies":         {},
+  "devDependencies":      {},
+  "optionalDependencies": {},
+  "engines": {
+    "node":               "*"
+  },
+  "keywords":             ["nzbmatrix", "nzb", "api", "usenet"],
+  "license": {
+    "type":               "Public Domain",
+    "url":                "https://github.com/fvdm/nodejs-nzbmatrix/raw/master/UNLICENSE"
+  }
+}
