@@ -89,11 +89,11 @@ var app = {
 								
 								var result_item = {}
 								for( var d in item ) {
-									var line = item[d]
+									var line = item[d].replace( /;$/, '' )
 									var div = line.indexOf(':')
 									var key = line.slice(0, div)
 									if( key != '' ) {
-										result_item[ key ] = line.slice( div +1, -1 )
+										result_item[ key ] = line.slice( div +1 )
 									}
 								}
 								result.push( result_item )
@@ -105,11 +105,11 @@ var app = {
 							result = {}
 							item = data[0].split('\n')
 							for( var d in item ) {
-								var line = item[d]
+								var line = item[d].replace( /;$/, '' )
 								var div = line.indexOf(':')
 								var key = line.slice(0, div)
 								if( key != '' ) {
-									result[ key ] = line.slice( div +1, -1 )
+									result[ key ] = line.slice( div +1 )
 								}
 							}
 							
