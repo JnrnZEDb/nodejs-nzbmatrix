@@ -63,7 +63,6 @@ var app = {
 				response.on( 'end', function() {
 					
 					// refresh limits
-					app.limit = {}
 					for( var header in response.headers ) {
 						if( header.substr(0, 4) == 'api_' ) {
 							app.limit[ header ] = response.headers[ header ]
@@ -149,14 +148,7 @@ var app = {
 			path:		'search.php',
 			fields:		props,
 			onSuccess:	function( results ) {
-				var res = {}
-				if( results && results[0] === undefined ) {
-					res[ results.NZBID ] = results
-					var res = []
-					res.push( results )
-					results = res
-				}
-				cb( results )
+				cb( results[0] ? results : [results] )
 			},
 		})
 	},
