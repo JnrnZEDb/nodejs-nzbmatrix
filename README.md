@@ -1,12 +1,12 @@
 nodejs-nzbmatrix
 ================
 
-[Node.js](http://nodejs.org/) module for the [NZBMatrix](http://nzbmatrix.com/) API.
+[Node.js](http://nodejs.org/) module for the [NZBMatrix](https://nzbmatrix.com/) API.
 
 
 # Requirements
 
-* NZBMatrix account with API key.
+* NZBMatrix account with API key. ([here](https://nzbmatrix.com/account.php?action=api)
 * Node.js :)
 
 
@@ -86,7 +86,7 @@ nzbmatrix.bookmarks( 'add', 123, console.log )
 
 Search the database. This method always returns an array with objects.
 
-**props:** ([docs](http://nzbmatrix.com/api-info.php))
+**props:** ([docs](https://nzbmatrix.com/api-info.php))
 ```
 search      : search term
 catid       : if left blank all categories are searched, category ID used from site.
