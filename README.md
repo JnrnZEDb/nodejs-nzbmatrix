@@ -62,8 +62,7 @@ All methods take a `callback` function which will be called when results are rea
 
 ```js
 nzbmatrix.account( function( account ) {
-	console.log( account.USERNAME )
-	console.log( account.API_DAILY_RATE )
+	console.log( account.USERNAME +' : '+ account.API_DAILY_RATE +' API calls' )
 })
 ```
 
