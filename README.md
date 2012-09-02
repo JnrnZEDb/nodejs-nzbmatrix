@@ -80,7 +80,6 @@ nzbmatrix.account( function( account ) {
 ### ( props, callback )
 
 
-# License
 ## talk
 ### ( props )
 
@@ -108,6 +107,7 @@ nzbmatrix.talk({
 ```
 
 
+# Unlicense
 
 This is free and unencumbered software released into the public domain.
 
