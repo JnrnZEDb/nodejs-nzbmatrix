@@ -26,8 +26,19 @@ var app = {
 				var data = ''
 				response.on( 'data', function( chunk ) { data += chunk })
 				response.on( 'end', function() {
-					if( typeof props.onSuccess == 'function' ) {
-						props.onSuccess( data.toString('utf8').trim() || '' )
+					data = data.toString('utf8').trim().split('\n')
+					if( typeof data == 'object' && data.length !== undefined ) {
+						var result = {}
+						
+						for( var i in data ) {
+							var line = data[i]
+							var div = line.indexOf(':')
+							result[ line.slice(0, div) ] = line.slice( div +1, -1 )
+						}
+						
+						if( typeof props.onSuccess == 'function' ) {
+							props.onSuccess( result )
+						}
 					}
 				})
 			}
