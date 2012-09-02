@@ -66,8 +66,16 @@ nzbmatrix.account( function( account ) {
 })
 ```
 
+
 ## bookmarks
-### ( callback )
+### ( action, nzbID, callback )
+
+Add or remove a bookmark from your account.
+
+```js
+nzbmatrix.bookmarks( 'add', 123, console.log )
+```
+
 
 ## search
 ### ( props, callback )
