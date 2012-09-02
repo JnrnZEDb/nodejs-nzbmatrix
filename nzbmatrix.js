@@ -160,7 +160,15 @@ var app = {
 		})
 	},
 	
-	post: function() {},
+	post: function( nzbid, cb ) {
+		app.talk({
+			path:		'details.php',
+			onSuccess:	cb,
+			fields: {
+				id:	nzbid
+			}
+		})
+	},
 	
 	download: function() {}
 }
