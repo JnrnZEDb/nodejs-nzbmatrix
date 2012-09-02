@@ -65,7 +65,7 @@ var app = {
 					// refresh limits
 					for( var header in response.headers ) {
 						if( header.substr(0, 4) == 'api_' ) {
-							app.limit[ header ] = response.headers[ header ]
+							app.limit[ header ] = parseInt( response.headers[ header ] )
 						}
 					}
 					
