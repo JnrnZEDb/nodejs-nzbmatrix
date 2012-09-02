@@ -149,10 +149,7 @@ var app = {
 			path:		'search.php',
 			fields:		props,
 			onSuccess:	function( results ) {
-				if( results[0] === undefined ) {
-					results = new Array( results )
-				}
-				cb( results )
+				cb( results[0] ? results : [results] )
 			},
 		})
 	},
