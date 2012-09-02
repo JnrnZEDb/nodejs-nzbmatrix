@@ -149,12 +149,8 @@ var app = {
 			path:		'search.php',
 			fields:		props,
 			onSuccess:	function( results ) {
-				var res = {}
-				if( results && results[0] === undefined ) {
-					res[ results.NZBID ] = results
-					var res = []
-					res.push( results )
-					results = res
+				if( results[0] === undefined ) {
+					results = new Array( results )
 				}
 				cb( results )
 			},
