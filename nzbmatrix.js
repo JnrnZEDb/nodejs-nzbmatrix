@@ -70,6 +70,7 @@ var app = {
 						}
 					}
 					
+					// parse response
 					if( response.headers['content-type'] == 'application/x-nzb' ) {
 					
 						// NZB XML
