@@ -170,7 +170,25 @@ var app = {
 		})
 	},
 	
-	download: function() {}
+	download: function( nzbid, sceneName, cb ) {
+		if( !cb && typeof sceneName == 'function' ) {
+			var cb = sceneName
+			var sceneName = false
+		}
+		
+		sceneName = sceneName === true ? '1' : sceneName
+		sceneName = sceneName === false ? '0' : sceneName
+		sceneName = sceneName === null ? '0' : sceneName
+		
+		app.talk({
+			path:		'download.php',
+			onSuccess:	cb,
+			fields: {
+				id:		nzbid,
+				scenename:	sceneName
+			}
+		})
+	}
 }
 
 // !export
