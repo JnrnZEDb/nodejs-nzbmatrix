@@ -63,7 +63,6 @@ var app = {
 				response.on( 'end', function() {
 					
 					// refresh limits
-					app.limit = {}
 					for( var header in response.headers ) {
 						if( header.substr(0, 4) == 'api_' ) {
 							app.limit[ header ] = response.headers[ header ]
