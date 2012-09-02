@@ -57,6 +57,7 @@ nzbmatrix.account( console.log )
 
 All methods take a `callback` function which will be called when results are ready.
 
+
 ## account
 ### ( callback )
 
