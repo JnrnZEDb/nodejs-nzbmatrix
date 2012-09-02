@@ -42,6 +42,8 @@ var app = {
 		key:		''
 	},
 	
+	limit: {},
+	
 	talk: function( props ) {
 		var fields = props.fields || {}
 		fields.username = app.api.username
@@ -59,7 +61,15 @@ var app = {
 				
 				response.on( 'data', function( chunk ) { data += chunk })
 				response.on( 'end', function() {
+					
+					// refresh limits
+					app.limit = {}
+					for( var header in response.headers ) {
+						if( header.substr(0, 4) == 'api_' ) {
+							app.limit[ header ] = response.headers[ header ]
 						}
+					}
+					
 					if( response.headers['content-type'] == 'application/x-nzb' ) {
 					
 						// NZB XML
