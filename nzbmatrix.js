@@ -76,17 +76,42 @@ var app = {
 						result = data.toString('utf8')
 						
 					} else {
-					
+						
 						// object
-						data = data.toString('utf8').trim().split('\n')
-						if( typeof data == 'object' && data.length !== undefined ) {
-							result = {}
-							
+						data = data.toString('utf8').trim().split('\n|\n')
+						if( data[1] !== undefined ) {
+						
+							// multiple results
+							result = []
 							for( var i in data ) {
-								var line = data[i]
-								var div = line.indexOf(':')
-								result[ line.slice(0, div) ] = line.slice( div +1, -1 )
+								var item = data[i].split('\n')
+								
+								var result_item = {}
+								for( var d in item ) {
+									var line = item[d]
+									var div = line.indexOf(':')
+									var key = line.slice(0, div)
+									if( key != '' ) {
+										result_item[ key ] = line.slice( div +1, -1 )
+									}
+								}
+								result.push( result_item )
 							}
+							
+						} else {
+							
+							// just one
+							result = {}
+							item = data[0].split('\n')
+							for( var d in item ) {
+								var line = item[d]
+								var div = line.indexOf(':')
+								var key = line.slice(0, div)
+								if( key != '' ) {
+									result[ key ] = line.slice( div +1, -1 )
+								}
+							}
+							
 						}
 						
 					}
