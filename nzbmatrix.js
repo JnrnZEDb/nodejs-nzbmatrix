@@ -10,7 +10,7 @@ var app = {
 		key:		''
 	},
 	
-	talk: function( props, cb ) {
+	talk: function( props ) {
 		var fields = props.fields || {}
 		fields.username = app.api.username
 		fields.apikey = app.api.key
@@ -19,14 +19,16 @@ var app = {
 			{
 				host:		app.api.host,
 				port:		app.api.port || 443,
-				path:		app.api.path +'?'+ querystring.stringify( fields ),
+				path:		app.api.path + props.path +'?'+ querystring.stringify( fields ),
 				agent:		false
 			},
 			function( response ) {
 				var data = ''
 				response.on( 'data', function( chunk ) { data += chunk })
 				response.on( 'end', function() {
-					cb( data.toString('utf8').trim() || '' )
+					if( typeof props.onSuccess == 'function' ) {
+						props.onSuccess( data.toString('utf8').trim() || '' )
+					}
 				})
 			}
 		).end()
