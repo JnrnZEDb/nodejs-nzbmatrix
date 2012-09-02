@@ -132,7 +132,16 @@ var app = {
 		})
 	},
 	
-	bookmarks: function() {},
+	bookmarks: function( action, nzbid, cb ) {
+		app.talk({
+			path:		'bookmarks.php',
+			onSuccess:	cb,
+			fields: {
+				id:		nzbid,
+				action:		action
+			}
+		})
+	},
 	
 	search: function() {},
 	
