@@ -55,22 +55,35 @@ var app = {
 				agent:		false
 			},
 			function( response ) {
-				var data = ''
+				var result, data = ''
+				
 				response.on( 'data', function( chunk ) { data += chunk })
 				response.on( 'end', function() {
-					data = data.toString('utf8').trim().split('\n')
-					if( typeof data == 'object' && data.length !== undefined ) {
-						var result = {}
+						}
+					if( response.headers['content-type'] == 'application/x-nzb' ) {
+					
+						// NZB XML
+						result = data.toString('utf8').trim()
 						
-						for( var i in data ) {
-							var line = data[i]
-							var div = line.indexOf(':')
-							result[ line.slice(0, div) ] = line.slice( div +1, -1 )
+					} else {
+					
+						// object
+						data = data.toString('utf8').trim().split('\n')
+						if( typeof data == 'object' && data.length !== undefined ) {
+							result = {}
+							
+							for( var i in data ) {
+								var line = data[i]
+								var div = line.indexOf(':')
+								result[ line.slice(0, div) ] = line.slice( div +1, -1 )
+							}
 						}
 						
-						if( typeof props.onSuccess == 'function' ) {
-							props.onSuccess( result )
-						}
+					}
+					
+					// done
+					if( typeof props.onSuccess == 'function' ) {
+						props.onSuccess( result )
 					}
 				})
 			}
