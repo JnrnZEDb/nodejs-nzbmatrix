@@ -77,7 +77,12 @@ var app = {
 		).end()
 	},
 	
-	account: function() {},
+	account: function( cb ) {
+		app.talk({
+			path:		'account.php',
+			onSuccess:	cb
+		})
+	},
 	
 	bookmarks: function() {},
 	
