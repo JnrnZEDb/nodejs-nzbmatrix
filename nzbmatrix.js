@@ -73,7 +73,7 @@ var app = {
 					if( response.headers['content-type'] == 'application/x-nzb' ) {
 					
 						// NZB XML
-						result = data.toString('utf8').trim()
+						result = data.toString('utf8')
 						
 					} else {
 					
