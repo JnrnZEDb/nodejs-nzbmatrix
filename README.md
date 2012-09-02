@@ -80,6 +80,43 @@ nzbmatrix.bookmarks( 'add', 123, console.log )
 ## search
 ### ( props, callback )
 
+Search the database. This method always returns an array with objects.
+
+**props:** ([docs](http://nzbmatrix.com/api-info.php))
+```
+search      : search term
+catid       : if left blank all categories are searched, category ID used from site.
+num         : if left blank a maximum of 5 results will display, 5 is the maximum number of results that can be produced.
+age         : if left blank full site retention will be used. Age must be number of "days" eg 200
+region      : if left blank results will not be limited 1 = PAL, 2 = NTSC, 3 = FREE
+group       : if left blank all groups will be searched, format is full group name "alt.binaries.X"
+larger      : minimum size in MB
+smaller     : maximum size in MB
+minhits     : minimum hits
+maxhits     : maximum hits
+maxage      : same as &age (above) here for matching site search vars only
+englishonly : if '1' the search will only return ENGLISH and UNKNOWN matches
+searchin    : (name, subject, weblink) if left blank or not used then search filed is "name"
+```
+
+**Example:**
+
+```js
+nzbmatrix.search(
+	{
+		search:	'ubuntu',
+		catid:	20
+	},
+	function( results ) {
+		for( var i in results ) {
+			var item = results[i]
+			console.log( item.NZBID +' - '+ item.NZBNAME )
+		}
+	}
+)
+```
+
+
 ## post
 ### ( props, callback )
 
