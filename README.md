@@ -6,7 +6,7 @@ nodejs-nzbmatrix
 
 # Requirements
 
-* NZBMatrix account with API key. ([here](https://nzbmatrix.com/account.php?action=api)
+* NZBMatrix account with API key. ([here](https://nzbmatrix.com/account.php?action=api))
 * Node.js :)
 
 
