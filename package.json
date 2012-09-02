@@ -2,7 +2,7 @@
   "author": {
     "name":               "Franklin van de Meent",
     "email":              "fr@nkl.in",
-    "url":                "http://frankl.in)"
+    "url":                "http://frankl.in"
   },
   "name":                 "nzbmatrix",
   "description":          "Access the NZBMatrix API methods",
