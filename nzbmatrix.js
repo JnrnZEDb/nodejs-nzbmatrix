@@ -1,7 +1,7 @@
 var https = require('https'),
     querystring = require('querystring')
 
-var app = {
+module.exports = {
 	api: {
 		host:		'api.nzbmatrix.com',
 		port:		443,
