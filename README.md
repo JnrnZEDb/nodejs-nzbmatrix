@@ -128,7 +128,15 @@ nzbmatrix.post( 123, console.log )
 
 
 ## download
-### ( props, callback )
+### ( nzbID, [restoreSceneNames], callback )
+
+Download NZB XML file.
+
+```js
+nzbmatrix.download( 123, function( xml ) {
+	// ie. store on disk
+})
+```
 
 
 ## talk
