@@ -118,7 +118,14 @@ nzbmatrix.search(
 
 
 ## post
-### ( props, callback )
+### ( nzbid, callback )
+
+Get details about a NZB post.
+
+```js
+nzbmatrix.post( 123, console.log )
+```
+
 
 ## download
 ### ( props, callback )
