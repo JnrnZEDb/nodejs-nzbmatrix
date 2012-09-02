@@ -143,7 +143,22 @@ var app = {
 		})
 	},
 	
-	search: function() {},
+	search: function( props, cb ) {
+		app.talk({
+			path:		'search.php',
+			fields:		props,
+			onSuccess:	function( results ) {
+				var res = {}
+				if( results && results[0] === undefined ) {
+					res[ results.NZBID ] = results
+					var res = []
+					res.push( results )
+					results = res
+				}
+				cb( results )
+			},
+		})
+	},
 	
 	post: function() {},
 	
