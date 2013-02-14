@@ -4,6 +4,15 @@ nodejs-nzbmatrix
 [Node.js](http://nodejs.org/) module for the [NZBMatrix](https://nzbmatrix.com/) API.
 
 
+# End of life
+
+### NZBMatrix has ended their services.
+
+This module remains available, but it will **NOT** work properly or get updates!
+
+Refer to <http://nzbmatrix.com> for the story.
+
+
 # Requirements
 
 * NZBMatrix account with API key. ([here](https://nzbmatrix.com/account.php?action=api))
